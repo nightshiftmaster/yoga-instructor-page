@@ -69,7 +69,7 @@ export default function Hero() {
         muted
         playsInline
       >
-        <source src="/main_videoHD2.MOV" type="video/mp4" />
+        <source src="/main_videoHD.MOV" type="video/mp4" />
       </video>
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 grid-pattern opacity-20"></div>
