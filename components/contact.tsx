@@ -1,46 +1,58 @@
-"use client"
+"use client";
 
-import { useRef, useState } from "react"
-import { motion, useInView, AnimatePresence } from "framer-motion"
-import { useLanguage } from "@/components/language-provider"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Instagram, Facebook, Youtube } from "lucide-react"
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/components/language-provider";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Contact() {
-  const { language, translations } = useLanguage()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const { language, translations } = useLanguage();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
+  interface FormState {
+    name: string;
+    email: string;
+    message: string;
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormState((prev: FormState) => ({ ...prev, [name]: value }));
+  };
+
+  interface SubmitEvent {
+    preventDefault: () => void;
+  }
+
+  const handleSubmit = (e: SubmitEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormState({ name: "", email: "", message: "" })
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormState({ name: "", email: "", message: "" });
 
       // Reset success message after 5 seconds
       setTimeout(() => {
-        setIsSubmitted(false)
-      }, 5000)
-    }, 1500)
-  }
+        setIsSubmitted(false);
+      }, 5000);
+    }, 1500);
+  };
 
   const formVariants = {
     hidden: { opacity: 0 },
@@ -51,17 +63,20 @@ export default function Contact() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
-    <section id="contact" className="py-28 bg-dark-black relative overflow-hidden noise-bg">
+    <section
+      id="contact"
+      className="py-28 bg-gradient-to-b from-[#8a635b] via-[#8A7F7A] to-[#5b5a5a] soft-gradient-bg  relative overflow-hidden noise-bg"
+    >
       <motion.div
-        className="absolute top-0 left-0 w-full h-20 bg-dark-slate"
+        className="absolute top-0 left-0 w-full h-20 "
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 100%)" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -80,6 +95,7 @@ export default function Contact() {
             <motion.span
               className="inline-block text-teal text-sm tracking-[0.3em] uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: false }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
@@ -92,7 +108,9 @@ export default function Contact() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-teal">{translations[language].contactTitle.charAt(0)}</span>
+              <span className="text-teal">
+                {translations[language].contactTitle.charAt(0)}
+              </span>
               {translations[language].contactTitle.slice(1)}
             </motion.h2>
 
@@ -117,7 +135,11 @@ export default function Contact() {
               <motion.div
                 className="absolute -inset-1 rounded-lg bg-gradient-to-r from-teal to-amber z-0"
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                animate={
+                  isInView
+                    ? { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0.9 }
+                }
                 transition={{ duration: 0.5, delay: 0.6 }}
               />
 
@@ -164,7 +186,7 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                  <Button
+                  <motion.button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-teal hover:bg-amber text-black font-medium tracking-wider h-14 text-lg relative overflow-hidden"
@@ -203,12 +225,17 @@ export default function Contact() {
                           Отправка...
                         </motion.div>
                       ) : (
-                        <motion.span key="send" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                        <motion.span
+                          key="send"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                        >
                           {translations[language].send}
                         </motion.span>
                       )}
                     </AnimatePresence>
-                  </Button>
+                  </motion.button>
                 </motion.div>
 
                 <AnimatePresence>
@@ -237,7 +264,9 @@ export default function Contact() {
               <motion.div
                 className="space-y-8 text-white"
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <p className="text-xl leading-relaxed font-light">
@@ -246,17 +275,23 @@ export default function Contact() {
                     : "If you have questions about my courses or would like to sign up for a class, please fill out the form or contact me through social media."}
                 </p>
                 <p className="text-lg leading-relaxed font-light text-white/80">
-                  {language === "ru" ? "Я отвечу вам в течение 24 часов." : "I will respond to you within 24 hours."}
+                  {language === "ru"
+                    ? "Я отвечу вам в течение 24 часов."
+                    : "I will respond to you within 24 hours."}
                 </p>
               </motion.div>
 
               <motion.div
                 className="mt-16 border-t border-white/10 pt-8"
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.5, delay: 1 }}
               >
-                <h3 className="text-2xl font-heading font-bold mb-8 text-teal">{translations[language].follow}</h3>
+                <h3 className="text-2xl font-heading font-bold mb-8 text-teal">
+                  {translations[language].follow}
+                </h3>
                 <div className="flex space-x-6">
                   <motion.a
                     href="#"
@@ -298,6 +333,5 @@ export default function Contact() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

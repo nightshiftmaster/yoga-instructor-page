@@ -8,7 +8,7 @@ import { useLanguage } from "@/components/language-provider";
 export default function About() {
   const { language, translations } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -22,7 +22,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-28 bg-gradient-to-b from-[#9d9996] via-[#8A7F7A] to-[#8a5347] h-screen w-full relative overflow-hidden noise-bg"
+      className="py-28 bg-gradient-to-b from-[#9d9996] via-[#8A7F7A] to-[#8a5347] h-full w-full relative overflow-hidden noise-bg"
     >
       {/* Organic background elements instead of hexagons */}
       <motion.div
