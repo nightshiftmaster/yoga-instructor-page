@@ -191,7 +191,38 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            {titleWords.map((word, index) => (
+            {/* logo */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block mr-3 text-5xl md:text-7xl font-heading font-bold text-white"
+            >
+              <motion.span
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                className="gradient-text"
+              >
+                YG
+              </motion.span>
+              <motion.span
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-white font-light ml-1"
+              >
+                Level
+              </motion.span>
+              <motion.div
+                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-teal to-amber"
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              />
+            </motion.div>
+
+            {/* {titleWords.map((word, index) => (
               <motion.span
                 key={index}
                 className="inline-block mr-3 text-5xl md:text-7xl font-heading font-bold text-white"
@@ -205,7 +236,7 @@ export default function Hero() {
                   word
                 )}
               </motion.span>
-            ))}
+            ))} */}
           </motion.h1>
 
           <motion.h1 className="text-2xl  md:text-5xl font-heading text-white mb-8 font-bold">
@@ -253,10 +284,10 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className=" text-white border-2 rounded-2xl border-teal hover:border-amber px-10 py-7 relative overflow-hidden group bg-[#0BCEBC]"
+              className=" text-white border-2 rounded-lg border-teal hover:border-amber px-10 py-7 relative overflow-hidden group bg-[#0BCEBC]"
               onClick={() =>
                 document
-                  .getElementById("contact")
+                  .getElementById("about")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >

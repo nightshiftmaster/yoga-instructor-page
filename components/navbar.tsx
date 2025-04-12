@@ -139,7 +139,7 @@ export default function Navbar() {
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === "ru" ? "en" : "ru")}
-              className="text-white hover:text-teal border-teal/30 hover:border-teal font-light tracking-widest"
+              className="text-white hover:text-teal bg-stone-600 border-teal/30 hover:border-teal font-light tracking-widest"
             >
               {language === "ru" ? "EN" : "RU"}
             </Button>

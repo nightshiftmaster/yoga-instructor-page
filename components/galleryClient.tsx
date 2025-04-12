@@ -103,7 +103,9 @@ export default function Gallery({
           >
             <Swiper
               modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+              loop={true}
               effect="coverflow"
+              speed={1200}
               initialSlide={2}
               grabCursor={true}
               centeredSlides={true}

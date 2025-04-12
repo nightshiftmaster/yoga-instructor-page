@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
   const { language, translations } = useLanguage();
@@ -138,18 +139,18 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 0, x: 200 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-white"
             >
               <motion.p
-                className="text-xl leading-relaxed mb-8 font-light"
-                initial={{ opacity: 0, y: 20 }}
+                className="text-lg leading-relaxed mb-8 font-light text-white/80"
+                initial={{ opacity: 0, x: 200 }}
                 animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 0.7 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <span className="text-teal text-3xl font-heading font-medium">
                   "
@@ -159,31 +160,54 @@ export default function About() {
 
               <motion.p
                 className="text-lg leading-relaxed mb-8 font-light text-white/80"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, x: 200 }}
                 animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 0.9 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Мой путь в йоге начался более 10 лет назад. За это время я
-                изучила различные направления и техники, которые помогают людям
-                обрести гармонию тела и духа. Я верю, что осознанное движение —
-                это ключ к здоровью, внутреннему спокойствию и радости.
+                {translations[language].aboutText2}
               </motion.p>
 
               <motion.p
-                className="text-lg leading-relaxed font-light text-white/80"
-                initial={{ opacity: 0, y: 20 }}
+                className="text-lg leading-relaxed mb-8 font-light text-white/80"
+                initial={{ opacity: 0, x: 200 }}
                 animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 1.1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                В своей практике я сочетаю элементы йоги, пилатеса и
-                танцевально-двигательной терапии, создавая уникальный подход к
-                каждому ученику. Моя цель — помочь вам раскрыть свой потенциал,
-                научиться слушать свое тело и обрести внутреннюю гармонию.
+                {translations[language].aboutText3}
               </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 2.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className=" text-white border-2 mt-5 rounded-lg border-teal hover:border-amber px-10 py-7 relative overflow-hidden group bg-[#0BCEBC]"
+                  onClick={() =>
+                    document
+                      .getElementById("courses")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <span className="relative z-10 tracking-widest font-light text-lg">
+                    {translations[language].coursesTitle}
+                  </span>
+                  <motion.span
+                    className="absolute inset-0 bg-gradient-to-r from-teal to-amber"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ originX: 0 }}
+                  />
+                </Button>
+              </motion.div>
 
               <motion.div
                 className="mt-10 inline-block"

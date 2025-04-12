@@ -133,7 +133,7 @@ export default function Contact() {
               className="relative"
             >
               <motion.div
-                className="absolute -inset-1 rounded-lg bg-gradient-to-r from-teal to-amber z-0"
+                className="absolute -inset-[0.5px] rounded-2xl bg-gradient-to-r from-teal to-amber z-0"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={
                   isInView
@@ -145,7 +145,7 @@ export default function Contact() {
 
               <motion.form
                 onSubmit={handleSubmit}
-                className="relative z-10 bg-dark-slate p-8 space-y-8 rounded-lg"
+                className="bg-stone-600   relative z-10  p-8 space-y-8 rounded-2xl"
                 variants={formVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -158,7 +158,7 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleChange}
                     required
-                    className="bg-dark border-white/10 focus-visible:ring-teal text-white placeholder:text-white/50 h-14"
+                    className="bg-neutral-500 border-white/10 focus-visible:ring-teal text-white placeholder:text-white/50 h-14"
                   />
                 </motion.div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                     value={formState.email}
                     onChange={handleChange}
                     required
-                    className="bg-dark border-white/10 focus-visible:ring-teal text-white placeholder:text-white/50 h-14"
+                    className="bg-neutral-500 border-white/10 focus-visible:ring-teal text-white placeholder:text-white/50 h-14"
                   />
                 </motion.div>
 
@@ -181,7 +181,7 @@ export default function Contact() {
                     value={formState.message}
                     onChange={handleChange}
                     required
-                    className="bg-dark border-white/10 focus-visible:ring-teal text-white placeholder:text-white/50 min-h-[150px]"
+                    className="bg-neutral-500 border-white/10 focus-visible:ring-teal text-white placeholder:text-white/50 min-h-[150px]"
                   />
                 </motion.div>
 
@@ -189,7 +189,7 @@ export default function Contact() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-teal hover:bg-amber text-black font-medium tracking-wider h-14 text-lg relative overflow-hidden"
+                    className="w-full bg-teal hover:bg-amber rounded-lg text-black font-medium tracking-wider h-14 text-lg relative overflow-hidden"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
