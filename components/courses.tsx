@@ -281,7 +281,7 @@ export default function Courses() {
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                className="airy-button text-white relative overflow-hidden tracking-wider font-medium"
+                className="airy-button text-white relative overflow-hidden w-max tracking-wider font-medium"
                 onClick={() =>
                   document
                     .getElementById("contact")

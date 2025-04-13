@@ -142,7 +142,7 @@ export default function About() {
               initial={{ opacity: 0, x: 200 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-white"
+              className="text-white text-center md:text-left"
             >
               <motion.p
                 className="text-lg leading-relaxed mb-8 font-light text-white/80"
