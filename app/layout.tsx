@@ -64,6 +64,16 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  other: {
+    "og:image:width": "1986",
+    "og:image:height": "1243",
+    "og:image:type": "image/png",
+    "og:image:secure_url": "https://yg-level.vercel.app/OG.png",
+    "og:image:alt": "YG Level - Yoga & Pilates",
+    "twitter:image:alt": "YG Level - Yoga & Pilates",
+    "twitter:image:width": "1986",
+    "twitter:image:height": "1243",
+  },
 };
 
 export default function RootLayout({
