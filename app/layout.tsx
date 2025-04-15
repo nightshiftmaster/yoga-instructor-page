@@ -21,6 +21,19 @@ export const metadata = {
   description:
     "Yoga, Pilates, Dance Movement Therapy & ThetaHealing with Yulia Golovin",
   generator: "v0.dev",
+  openGraph: {
+    title: "YG Level - Yoga & Pilates",
+    description:
+      "Yoga, Pilates, Dance Movement Therapy & ThetaHealing with Yulia Golovin",
+    images: [
+      {
+        url: "/OGphoto.png",
+        width: 1200,
+        height: 630,
+        alt: "YG Level - Yoga & Pilates",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

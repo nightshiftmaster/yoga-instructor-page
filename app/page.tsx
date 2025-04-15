@@ -6,7 +6,6 @@ import Footer from "@/components/footer";
 import { LanguageProvider } from "@/components/language-provider";
 import Cursor from "@/components/cursor";
 import GalleryPage from "@/components/gallery";
-import dynamic from "next/dynamic";
 import NavbarClient from "@/components/navbar-client";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
     <LanguageProvider>
       <div className="min-h-screen bg-dark-black overflow-hidden">
         <Cursor />
-        {/* <NavbarClient /> */}
+        <NavbarClient />
         <main>
           <Hero />
           <About />
