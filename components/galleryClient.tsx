@@ -69,7 +69,7 @@ export default function Gallery({
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              Моменты практики
+              {translations[language].galleryHeader}
             </motion.span>
 
             <motion.h2

@@ -19,6 +19,11 @@ const translations: Translations = {
     courses: "Курсы",
     contact: "Контакты",
 
+    aboutHeader: "Познакомимся",
+    galleryHeader: "Моменты практики",
+    coursesHeader: "Программы обучения",
+    contactHeader: "Будем на связи",
+
     // Hero
     title: "YG Level",
     slogan: "В мире осознанности",
@@ -33,27 +38,25 @@ const translations: Translations = {
     aboutText:
       "Меня зовут Юлия Головин, я сертифицированный инструктор Йоги/Пилатес терапии...",
     aboutText2:
-      "Мой путь в йоге начался более 10 лет назад. За это время я изучила различные направления и техники, которые помогают людям обрести гармонию тела и духа. Я верю, что осознанное движение — это ключ к здоровью, внутреннему спокойствию и радости.",
+      "Мой путь в йоге начался более 10 лет назад. За это время я изучила различные направления и техники, которые помогают людям обрести гармонию тела и духа.",
     aboutText3:
-      "В своей практике я сочетаю элементы йоги, пилатеса и танцевально-двигательной терапии, создавая уникальный подход к каждому ученику. Моя цель — помочь вам раскрыть свой потенциал, научиться слушать свое тело и обрести внутреннюю гармонию.",
+      "В своей практике я сочетаю элементы йоги, пилатеса и танцевально-двигательной терапии, создавая уникальный подход к каждому ученику.",
 
     // Courses
     coursesTitle: "Мои курсы",
     course1Title: "Знакомство с Йогой",
     course1Desc:
-      "Первые шаги в мир осознанности: дыхание, движения, концентрация. Освоение базовых асан и работы с телом.",
+      "Первые шаги в мир осознанности: дыхание, движения, концентрация.",
     course1Details: "1 месяц (16 занятий)",
     course1Price: "650",
 
     course2Title: "Здоровая спина",
-    course2Desc:
-      "Практика для укрепления позвоночника, снятия напряжения и улучшения осанки через йогу, пилатес и дыхание.",
+    course2Desc: "Практика для укрепления позвоночника и улучшения осанки.",
     course2Details: "2 месяца (24 занятия)",
     course2Price: "1200",
 
     course3Title: "Красота тела и души",
-    course3Desc:
-      "Йога, танец и осознанность для женственности, пластичности и раскрытия внутренней гармонии.",
+    course3Desc: "Йога, танец и осознанность для женственности и гармонии.",
     course3Details: "3 месяца (60 занятий)",
     course3Price: "1550",
 
@@ -69,7 +72,7 @@ const translations: Translations = {
     follow: "Следите за мной",
 
     // Footer
-    copyright: "© 2025 All rights reserved.",
+    copyright: "© 2025 Все права защищены.",
   },
   en: {
     // Navigation
@@ -79,12 +82,17 @@ const translations: Translations = {
     courses: "Courses",
     contact: "Contact",
 
+    aboutHeader: "Let's Get Acquainted",
+    galleryHeader: "Practice Moments",
+    coursesHeader: "Training Programs",
+    contactHeader: "Let's Stay in Touch",
+
     // Hero
-    title: "YG Level – In the World of Mindfulness",
+    title: "YG Level",
+    slogan: "In the World of Mindfulness",
     subtitle: "Yoga • Pilates • Dance Movement Therapy • ThetaHealing",
     description: "All about the movement of body and mind.",
-    cta: "Learn more",
-    slogan: "In the world of mindfulness",
+    cta: "Learn More",
     serviceList: "Yoga • Pilates • Dance Movement Therapy • ThetaHealing",
 
     // About
@@ -92,27 +100,25 @@ const translations: Translations = {
     aboutText:
       "My name is Yulia Golovin, I am a certified Yoga/Pilates therapy instructor...",
     aboutText2:
-      "My journey in yoga began over 10 years ago. Throughout this time, I've explored various styles and techniques that help people find harmony between body and soul. I truly believe that mindful movement is the key to health, inner peace, and genuine joy.",
+      "My journey in yoga began over 10 years ago. During this time, I've studied various directions and techniques that help people achieve harmony of body and spirit.",
     aboutText3:
-      "In my practice, I combine elements of yoga, pilates, and dance movement therapy, creating a unique approach for each student. My goal is to help you unlock your potential, learn to listen to your body, and find inner harmony.",
+      "In my practice, I combine elements of yoga, pilates, and dance movement therapy, creating a unique approach for each student.",
 
     // Courses
     coursesTitle: "My Courses",
     course1Title: "Introduction to Yoga",
     course1Desc:
-      "First steps into the world of mindfulness: breathing, movements, concentration. Mastering basic asanas and body work.",
+      "First steps into the world of mindfulness: breathing, movements, concentration.",
     course1Details: "1 month (16 sessions)",
     course1Price: "650",
 
     course2Title: "Healthy Back",
-    course2Desc:
-      "Practice for strengthening the spine, relieving tension and improving posture through yoga, pilates and breathing.",
+    course2Desc: "Practice for strengthening the spine and improving posture.",
     course2Details: "2 months (24 sessions)",
     course2Price: "1200",
 
     course3Title: "Beauty of Body and Soul",
-    course3Desc:
-      "Yoga, dance and mindfulness for femininity, plasticity and revealing inner harmony.",
+    course3Desc: "Yoga, dance, and mindfulness for femininity and harmony.",
     course3Details: "3 months (60 sessions)",
     course3Price: "1550",
 

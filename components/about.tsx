@@ -63,7 +63,7 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              Познакомимся
+              {translations[language].aboutHeader}
             </motion.span>
 
             <div className="overflow-hidden">

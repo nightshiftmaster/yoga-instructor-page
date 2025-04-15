@@ -34,6 +34,25 @@ export const metadata = {
       },
     ],
   },
+  alternates: {
+    languages: {
+      en: "/en",
+      ru: "/ru",
+    },
+  },
+  metadataBase: new URL("https://yglevel.com"),
+  robots: {
+    index: true,
+    follow: true,
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
