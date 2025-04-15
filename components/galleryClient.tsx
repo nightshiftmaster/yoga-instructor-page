@@ -124,10 +124,10 @@ export default function Gallery({
               {galleryImages?.map((image, index) => (
                 <SwiperSlide
                   key={index}
-                  style={{ width: "100%", maxWidth: "500px" }}
+                  style={{ width: "100%", maxWidth: "500px", height: "500px" }}
                 >
                   <motion.div
-                    className="relative aspect-[4/3] w-full overflow-hidden group rounded-frame soft-shadow"
+                    className="relative aspect-[4/3]  w-full h-full  group rounded-frame soft-shadow"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
                   >

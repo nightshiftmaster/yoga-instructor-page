@@ -168,7 +168,7 @@ export default function Courses() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
             {courses.map((course, index) => (
               <CourseCard
                 picture={pictures[index]}
@@ -308,14 +308,23 @@ export default function Courses() {
               transition={{ duration: 0.5, delay: 0.9 + index * 0.2 }}
             >
               <Dialog>
-                <DialogTrigger asChild>
+                <div className="flex lg:flex-row flex-col gap-3 justify-center items-center  w-full">
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="border-teal/30 rounded-full bg-stone-700 relative text-white hover:bg-black  hover:border-teal/50 hover:scale-110 transition-all duration-300 tracking-wider font-medium w-full lg:w-1/2"
+                    >
+                      {translations[language].learnMore}
+                    </Button>
+                  </DialogTrigger>
+
                   <Button
-                    variant="outline"
-                    className="border-teal/30 rounded-full bg-stone-700 relative text-white hover:bg-black  hover:border-teal/50 hover:scale-110 transition-all duration-300 tracking-wider font-medium"
+                    className="airy-button text-white w-full lg:w-1/2  bg-teal/70 relative rounded-full overflow-hidden  tracking-wider font-medium"
+                    onClick={handleEnrollClick}
                   >
-                    {translations[language].learnMore}
+                    {translations[language].enroll}
                   </Button>
-                </DialogTrigger>
+                </div>
                 <DialogContent className="bg-stone-600 text-white border-teal/10 max-w-2xl airy-card">
                   <DialogHeader>
                     <DialogTitle className="text-teal font-heading text-3xl font-bold">
@@ -346,17 +355,6 @@ export default function Courses() {
                       расслаблению и концентрации. Группы небольшие, что
                       позволяет уделить внимание каждому ученику.
                     </p>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Button
-                        className="airy-button text-white rounded-full w-full relative overflow-hidden  tracking-wider font-medium"
-                        onClick={handleEnrollClick}
-                      >
-                        {translations[language].enroll}
-                      </Button>
-                    </motion.div>
                   </div>
                   <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
                     <X className="h-4 w-4 text-white" />
@@ -364,18 +362,6 @@ export default function Courses() {
                   </DialogClose>
                 </DialogContent>
               </Dialog>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  className="airy-button text-white w-full  bg-teal/70 relative rounded-full overflow-hidden  tracking-wider font-medium"
-                  onClick={handleEnrollClick}
-                >
-                  {translations[language].enroll}
-                </Button>
-              </motion.div>
             </motion.div>
           </div>
         </motion.div>
