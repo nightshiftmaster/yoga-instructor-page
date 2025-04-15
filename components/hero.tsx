@@ -360,7 +360,7 @@ export default function Hero() {
             transition={{ duration: 5, delay: 2 }}
           >
             <motion.p
-              className="text-sm md:text-lg font-body text-white/90 tracking-[0.05em] md:tracking-[0.15em] font-light uppercase"
+              className="text-sm md:text-lg font-body text-white/80 tracking-[0.05em] md:tracking-[0.15em] font-light uppercase"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 2.2 }}
@@ -370,7 +370,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="text-base md:text-lg mb-14 text-white/90 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
+            className="text-base md:text-lg mb-14 text-white/80 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.2 }}
