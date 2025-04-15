@@ -217,13 +217,13 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block relative"
+              className="inline-block relative drop-shadow-[0_0_1px_white]"
             >
               <motion.span
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="text-5xl md:text-7xl font-artistic bg-clip-text text-transparent bg-gradient-to-br from-teal via-white to-amber"
+                className="text-5xl md:text-7xl font-artistic bg-clip-text text-transparent bg-gradient-to-br from-teal via-white to-amber  "
               >
                 YG
               </motion.span>
@@ -388,7 +388,7 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="text-white border  border-teal/70 hover:border-amber/70 rounded-full px-7 py-3 md:px-12 md:py-6 relative overflow-hidden group bg-gradient-to-r from-teal/80 to-bg-teal/70 backdrop-blur-xl shadow-xl shadow-teal/20 hover:shadow-xl hover:shadow-amber/30 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+              className="text-white border drop-shadow-[0_0_24px_rgba(255,255,255,0.5)]  border-teal/70 hover:border-amber/70 rounded-full px-7 py-3 md:px-12 md:py-6 relative overflow-hidden group bg-gradient-to-r from-teal/80 to-bg-teal/70 backdrop-blur-xl shadow-xl shadow-teal/20 hover:shadow-xl hover:shadow-amber/30 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
               onClick={() =>
                 document
                   .getElementById("about")
