@@ -6,7 +6,7 @@ import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Instagram, Facebook, Youtube } from "lucide-react";
+import { Instagram, Facebook, Youtube, PhoneCall, Send } from "lucide-react";
 
 export default function Contact() {
   const { language, translations } = useLanguage();
@@ -189,7 +189,7 @@ export default function Contact() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-teal hover:bg-amber rounded-lg text-black font-medium tracking-wider h-14 text-lg relative overflow-hidden"
+                    className="w-full bg-teal/70 hover:bg-amber rounded-lg text-white font-medium tracking-wider h-14 text-lg relative overflow-hidden"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -289,12 +289,34 @@ export default function Contact() {
                 }
                 transition={{ duration: 0.5, delay: 1 }}
               >
-                <h3 className="text-2xl font-heading font-bold mb-8 text-teal">
+                {/* <h3 className="text-2xl font-heading font-bold mb-8 text-teal">
                   {translations[language].follow}
-                </h3>
+                </h3> */}
                 <div className="flex space-x-6">
                   <motion.a
-                    href="#"
+                    href="tel:+16137699591"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-amber w-fit hover:text-white transition-colors p-4 border border-amber/30 hover:border-amber"
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <PhoneCall size={24} />
+                    <span className="sr-only">Phone</span>
+                  </motion.a>
+                  <motion.a
+                    href="https://wa.me/16137699591"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-teal hover:text-white transition-colors p-4 border border-teal/30 hover:border-teal"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Send size={24} />
+                    <span className="sr-only">Message</span>
+                  </motion.a>
+                  <motion.a
+                    href="https://www.instagram.com/yg_level/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-teal hover:text-white transition-colors p-4 border border-teal/30 hover:border-teal"
@@ -305,7 +327,7 @@ export default function Contact() {
                     <span className="sr-only">Instagram</span>
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="https://www.facebook.com/YuliaHolovina"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-amber hover:text-white transition-colors p-4 border border-amber/30 hover:border-amber"
@@ -314,17 +336,6 @@ export default function Contact() {
                   >
                     <Facebook size={24} />
                     <span className="sr-only">Facebook</span>
-                  </motion.a>
-                  <motion.a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-teal hover:text-white transition-colors p-4 border border-teal/30 hover:border-teal"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Youtube size={24} />
-                    <span className="sr-only">YouTube</span>
                   </motion.a>
                 </div>
               </motion.div>

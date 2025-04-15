@@ -356,139 +356,19 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            className="overflow-hidden mb-10 relative"
+            className="overflow-hidden mb-12 relative text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2 }}
           >
-            <motion.div
-              className="relative flex justify-center max-w-4xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5 }}
+            <motion.p
+              className="text-base md:text-lg font-body text-white/80 tracking-[0.15em] font-light uppercase"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.2 }}
             >
-              <motion.div className="flex items-baseline space-x-6 md:space-x-8">
-                <motion.span
-                  className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 2 }}
-                  whileHover={{
-                    color: "#5EEAE0",
-                    y: -3,
-                    transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-                  }}
-                >
-                  <span className="relative z-10">Йога</span>
-                  <motion.div
-                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
-                    initial={{ scaleX: 0, originX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                  />
-                </motion.span>
-
-                <motion.span
-                  className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 2.1 }}
-                  whileHover={{
-                    color: "#5EEAE0",
-                    y: -3,
-                    transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-                  }}
-                >
-                  <span className="relative z-10">Пилатес</span>
-                  <motion.div
-                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
-                    initial={{ scaleX: 0, originX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                  />
-                </motion.span>
-
-                <motion.div className="flex items-baseline space-x-3">
-                  <motion.span
-                    className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 2.2 }}
-                    whileHover={{
-                      color: "#5EEAE0",
-                      y: -3,
-                      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-                    }}
-                  >
-                    <span className="relative z-10">Танцевально</span>
-                    <motion.div
-                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
-                      initial={{ scaleX: 0, originX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                    />
-                  </motion.span>
-                  <motion.span
-                    className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 2.3 }}
-                    whileHover={{
-                      color: "#5EEAE0",
-                      y: -3,
-                      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-                    }}
-                  >
-                    <span className="relative z-10">двигательная</span>
-                    <motion.div
-                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
-                      initial={{ scaleX: 0, originX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                    />
-                  </motion.span>
-                  <motion.span
-                    className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 2.4 }}
-                    whileHover={{
-                      color: "#5EEAE0",
-                      y: -3,
-                      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-                    }}
-                  >
-                    <span className="relative z-10">терапия</span>
-                    <motion.div
-                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
-                      initial={{ scaleX: 0, originX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                    />
-                  </motion.span>
-                </motion.div>
-
-                <motion.span
-                  className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 2.5 }}
-                  whileHover={{
-                    color: "#5EEAE0",
-                    y: -3,
-                    transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-                  }}
-                >
-                  <span className="relative z-10">Тетахилинг</span>
-                  <motion.div
-                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
-                    initial={{ scaleX: 0, originX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                  />
-                </motion.span>
-              </motion.div>
-            </motion.div>
+              {translations[language].serviceList}
+            </motion.p>
           </motion.div>
 
           <motion.p
@@ -510,14 +390,14 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="text-white border-[0.5px] rounded-full border-teal/50 hover:border-amber/50 px-12 py-5 relative overflow-hidden group bg-gradient-to-r from-teal/30 to-amber/30 backdrop-blur-sm"
+              className="text-white border  border-teal/70 hover:border-amber/70 rounded-full px-7 py-3 md:px-12 md:py-6 relative overflow-hidden group bg-gradient-to-r from-teal/80 to-bg-teal/70 backdrop-blur-xl shadow-xl shadow-teal/20 hover:shadow-xl hover:shadow-amber/30 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
               onClick={() =>
                 document
                   .getElementById("about")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              <span className="relative z-10 tracking-[0.2em] font-artistic text-lg group-hover:text-white">
+              <span className="relative z-10 tracking-[0.2em] font-body text-sm  md:text-lg uppercase font-normal group-hover:text-white transition-colors duration-300">
                 {translations[language].cta}
               </span>
               <motion.div
@@ -525,12 +405,12 @@ export default function Hero() {
                 initial={false}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-teal/40 to-amber/40"
+                  className="absolute inset-0 bg-gradient-to-r from-teal/60 to-amber/60 blur-sm"
                   animate={{
                     x: ["-100%", "100%"],
                   }}
                   transition={{
-                    duration: 1.5,
+                    duration: 2,
                     repeat: Infinity,
                     repeatType: "reverse",
                     ease: "easeInOut",

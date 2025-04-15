@@ -31,10 +31,14 @@ export default function Navbar() {
 
   const scrollToSection = (id: string) => {
     closeMenu();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        console.warn(`Element with ID '${id}' not found for scrolling.`);
+      }
+    }, 100);
   };
 
   const navVariants = {
@@ -139,7 +143,7 @@ export default function Navbar() {
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === "ru" ? "en" : "ru")}
-              className="text-white hover:text-teal bg-stone-600 border-teal/30 hover:border-teal font-light tracking-widest"
+              className="text-white hover:text-teal bg-stone-600 rounded-full border-teal/30 hover:border-teal font-light tracking-widest"
             >
               {language === "ru" ? "EN" : "RU"}
             </Button>
@@ -163,7 +167,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-dark-light shadow-md py-6 px-6 transition-all duration-300 ease-in-out"
+            className="md:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-[#8f8882] via-[#8A7F7A] to-[#ddcac4] shadow-md py-6 px-6 transition-all duration-300 ease-in-out"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

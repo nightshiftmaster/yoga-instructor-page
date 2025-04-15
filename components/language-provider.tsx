@@ -25,6 +25,8 @@ const translations: Translations = {
     subtitle: "Йога • Пилатес • Танцевально-двигательная терапия • Тетахилинг",
     description: "Все о движении тела и ума.",
     cta: "Узнать больше",
+    serviceList:
+      "Йога • Пилатес • Танцевально-двигательная терапия • Тетахилинг",
 
     // About
     aboutTitle: "Обо мне",
@@ -83,13 +85,14 @@ const translations: Translations = {
     description: "All about the movement of body and mind.",
     cta: "Learn more",
     slogan: "In the world of mindfulness",
+    serviceList: "Yoga • Pilates • Dance Movement Therapy • ThetaHealing",
 
     // About
     aboutTitle: "About Me",
     aboutText:
       "My name is Yulia Golovin, I am a certified Yoga/Pilates therapy instructor...",
     aboutText2:
-      "My journey in yoga began over 10 years ago. Throughout this time, I’ve explored various styles and techniques that help people find harmony between body and soul. I truly believe that mindful movement is the key to health, inner peace, and genuine joy.",
+      "My journey in yoga began over 10 years ago. Throughout this time, I've explored various styles and techniques that help people find harmony between body and soul. I truly believe that mindful movement is the key to health, inner peace, and genuine joy.",
     aboutText3:
       "In my practice, I combine elements of yoga, pilates, and dance movement therapy, creating a unique approach for each student. My goal is to help you unlock your potential, learn to listen to your body, and find inner harmony.",
 

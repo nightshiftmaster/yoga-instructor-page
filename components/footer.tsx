@@ -8,7 +8,7 @@ export default function Footer() {
   const { language, translations } = useLanguage();
 
   return (
-    <footer className="py-16 bg-stone-800 text-white relative overflow-hidden flex flex-col justify-center items-center">
+    <footer className="py-16 bg-stone-700 text-white relative overflow-hidden flex flex-col justify-center items-center">
       <motion.div
         className="absolute top-0 left-0 w-full h-1"
         style={{
@@ -38,6 +38,12 @@ export default function Footer() {
             </Link>
             <p className="mt-3 text-sm text-white/60 max-w-xs tracking-wider font-light">
               Йога • Пилатес • Танцевально-двигательная терапия • Тетахилинг
+            </p>
+            <p className="mt-3 text-sm text-white/60 max-w-xs tracking-wider font-light">
+              Tel: +1 613 7699591
+            </p>
+            <p className="mt-3 text-sm text-white/60 max-w-xs tracking-wider font-light">
+              Email: yglevel@gmail.com
             </p>
           </motion.div>
 

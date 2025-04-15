@@ -181,31 +181,44 @@ export default function About() {
               </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 2.8 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.8, delay: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="mt-10"
               >
                 <Button
                   size="lg"
-                  className=" text-white border-2 mt-5 rounded-lg border-teal hover:border-amber px-10 py-7 relative overflow-hidden group bg-[#0BCEBC]"
+                  className="text-white border  border-teal/70 hover:border-amber/70 rounded-full px-7 py-3 md:px-12 md:py-6 relative overflow-hidden group bg-gradient-to-r from-teal/80 to-bg-teal/70 backdrop-blur-xl shadow-xl shadow-teal/20 hover:shadow-xl hover:shadow-amber/30 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
                   onClick={() =>
                     document
                       .getElementById("courses")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  <span className="relative z-10 tracking-widest font-light text-lg">
+                  <span className="relative z-10 tracking-[0.2em] font-body text-sm md:text-lg uppercase font-normal group-hover:text-white transition-colors duration-300">
                     {translations[language].coursesTitle}
                   </span>
-                  <motion.span
-                    className="absolute inset-0 bg-gradient-to-r from-teal to-amber"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3 }}
-                    style={{ originX: 0 }}
-                  />
+                  <motion.div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={false}
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-teal/60 to-amber/60 blur-sm"
+                      animate={{
+                        x: ["-100%", "100%"],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </motion.div>
                 </Button>
               </motion.div>
 

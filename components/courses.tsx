@@ -307,7 +307,7 @@ export default function Courses() {
                 <DialogTrigger asChild>
                   <Button
                     variant="outline"
-                    className="border-teal/30 bg-stone-700 relative text-white hover:bg-black  hover:border-teal/50 hover:scale-110 transition-all duration-300 tracking-wider font-medium"
+                    className="border-teal/30 rounded-full bg-stone-700 relative text-white hover:bg-black  hover:border-teal/50 hover:scale-110 transition-all duration-300 tracking-wider font-medium"
                   >
                     {translations[language].learnMore}
                   </Button>
@@ -347,7 +347,7 @@ export default function Courses() {
                       whileTap={{ scale: 0.95 }}
                     >
                       <Button
-                        className="airy-button text-white w-full relative overflow-hidden  tracking-wider font-medium"
+                        className="airy-button text-white rounded-full w-full relative overflow-hidden  tracking-wider font-medium"
                         onClick={handleEnrollClick}
                       >
                         {translations[language].enroll}
@@ -366,7 +366,7 @@ export default function Courses() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
-                  className="airy-button text-white w-full relative overflow-hidden  tracking-wider font-medium"
+                  className="airy-button text-white w-full  bg-teal/70 relative rounded-full overflow-hidden  tracking-wider font-medium"
                   onClick={handleEnrollClick}
                 >
                   {translations[language].enroll}
@@ -492,20 +492,14 @@ const CheckoutSchema = Yup.object().shape({
   fullName: Yup.string()
     .min(2, "Name is too short")
     .max(50, "Name is too long")
-    .required("Full name is required")
-    .matches(
-      /^[a-zA-Zа-яА-Я\s-]+$/,
-      "Name can only contain letters, spaces, and hyphens"
-    ),
+    .required("Name is required"),
+
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
-  phone: Yup.string()
-    .required("Phone number is required")
-    .matches(
-      /^(\+7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/,
-      "Please enter a valid Russian phone number"
-    ),
+  phone: Yup.number()
+    .typeError("Тhe phone number must consist of numbers")
+    .required("Phone number is required"),
 });
 
 interface FormValues {
