@@ -8,7 +8,7 @@ export default function Footer() {
   const { language, translations } = useLanguage();
 
   return (
-    <footer className="py-16 bg-stone-700 text-white relative overflow-hidden flex flex-col justify-center items-center">
+    <footer className="py-16 text-center md:text-left bg-stone-700 text-white relative overflow-hidden flex flex-col justify-center items-center">
       <motion.div
         className="absolute top-0 left-0 w-full h-1"
         style={{
@@ -85,7 +85,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="text-sm opacity-60 tracking-widest font-light mt-10">
+          <p className="text-sm opacity-60 tracking-widest font-light md:mt-10">
             Created by{" "}
             <a
               href="https://vlad-web-developer.vercel.app"

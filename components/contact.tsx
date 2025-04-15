@@ -292,7 +292,7 @@ export default function Contact() {
                 {/* <h3 className="text-2xl font-heading font-bold mb-8 text-teal">
                   {translations[language].follow}
                 </h3> */}
-                <div className="flex space-x-6">
+                <div className="flex justify-center items-center  space-x-6">
                   <motion.a
                     href="tel:+16137699591"
                     target="_blank"
