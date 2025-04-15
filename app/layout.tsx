@@ -31,9 +31,9 @@ export const metadata = {
     siteName: "YG Level",
     images: [
       {
-        url: "https://yg-level.vercel.app/OG.png",
-        width: 1986,
-        height: 1243,
+        url: "https://yg-level.vercel.app/OG.jpg",
+        width: 1200,
+        height: 630,
         alt: "YG Level - Yoga & Pilates",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata = {
     title: "YG Level - Yoga & Pilates",
     description:
       "Yoga, Pilates, Dance Movement Therapy & ThetaHealing with Yulia Golovin",
-    images: ["https://yg-level.vercel.app/OG.png"],
+    images: ["https://yg-level.vercel.app/OG.jpg"],
   },
   alternates: {
     languages: {
@@ -65,14 +65,14 @@ export const metadata = {
     icon: "/favicon.ico",
   },
   other: {
-    "og:image:width": "1986",
-    "og:image:height": "1243",
-    "og:image:type": "image/png",
-    "og:image:secure_url": "https://yg-level.vercel.app/OG.png",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/jpeg",
+    "og:image:secure_url": "https://yg-level.vercel.app/OG.jpg",
     "og:image:alt": "YG Level - Yoga & Pilates",
     "twitter:image:alt": "YG Level - Yoga & Pilates",
-    "twitter:image:width": "1986",
-    "twitter:image:height": "1243",
+    "twitter:image:width": "1200",
+    "twitter:image:height": "630",
   },
 };
 
