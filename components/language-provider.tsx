@@ -41,19 +41,19 @@ const translations: Translations = {
     course1Desc:
       "Первые шаги в мир осознанности: дыхание, движения, концентрация. Освоение базовых асан и работы с телом.",
     course1Details: "1 месяц (16 занятий)",
-    course1Price: "650$",
+    course1Price: "650",
 
     course2Title: "Здоровая спина",
     course2Desc:
       "Практика для укрепления позвоночника, снятия напряжения и улучшения осанки через йогу, пилатес и дыхание.",
     course2Details: "2 месяца (24 занятия)",
-    course2Price: "1200$",
+    course2Price: "1200",
 
     course3Title: "Красота тела и души",
     course3Desc:
       "Йога, танец и осознанность для женственности, пластичности и раскрытия внутренней гармонии.",
     course3Details: "3 месяца (60 занятий)",
-    course3Price: "1550$",
+    course3Price: "1550",
 
     learnMore: "Подробнее",
     enroll: "Записаться",
@@ -67,7 +67,7 @@ const translations: Translations = {
     follow: "Следите за мной",
 
     // Footer
-    copyright: "© 2024 YG Level. Все права защищены.",
+    copyright: "© 2025 All rights reserved.",
   },
   en: {
     // Navigation
@@ -99,19 +99,19 @@ const translations: Translations = {
     course1Desc:
       "First steps into the world of mindfulness: breathing, movements, concentration. Mastering basic asanas and body work.",
     course1Details: "1 month (16 sessions)",
-    course1Price: "$650",
+    course1Price: "650",
 
     course2Title: "Healthy Back",
     course2Desc:
       "Practice for strengthening the spine, relieving tension and improving posture through yoga, pilates and breathing.",
     course2Details: "2 months (24 sessions)",
-    course2Price: "$1200",
+    course2Price: "1200",
 
     course3Title: "Beauty of Body and Soul",
     course3Desc:
       "Yoga, dance and mindfulness for femininity, plasticity and revealing inner harmony.",
     course3Details: "3 months (60 sessions)",
-    course3Price: "$1550",
+    course3Price: "1550",
 
     learnMore: "Learn More",
     enroll: "Enroll",
@@ -125,7 +125,7 @@ const translations: Translations = {
     follow: "Follow Me",
 
     // Footer
-    copyright: "© 2024 YG Level. All rights reserved.",
+    copyright: "© 2025 All rights reserved.",
   },
 };
 

@@ -20,8 +20,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        heading: ["var(--font-syne)", "sans-serif"],
+        sans: ["var(--font-dmsans)", "sans-serif"],
+        heading: ["var(--font-quicksand)", "sans-serif"],
         poiret: ["var(--font-poiret)", "sans-serif"],
       },
       colors: {

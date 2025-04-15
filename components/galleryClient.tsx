@@ -36,7 +36,6 @@ export default function Gallery({
     target: ref,
     offset: ["start end", "end start"],
   });
-  console.log(galleryImages);
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(

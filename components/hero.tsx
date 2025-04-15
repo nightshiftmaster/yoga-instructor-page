@@ -58,11 +58,11 @@ export default function Hero() {
     <section
       id="home"
       ref={ref}
-      className=" flex items-center justify-center  bg-[#8d7973] h-screen w-full relative overflow-hidden noise-bg"
+      className=" flex items-center justify-center  bg-[#9d9996] h-screen w-full relative overflow-hidden noise-bg"
     >
       <video
         data-testid="video-content"
-        className="h-[80%] absolute w-full opacity-60 object-cover z-0"
+        className="h-[90%] absolute w-full opacity-60 object-cover z-0"
         id="video"
         loop
         autoPlay
@@ -159,15 +159,15 @@ export default function Hero() {
             transition={{ duration: 1.5, type: "spring" }}
           >
             <svg
-              className="w-20 h-20 mx-auto"
+              className="w-24 h-24 mx-auto"
               viewBox="0 0 100 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <motion.path
                 d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z"
-                stroke="#0BCEBC"
-                strokeWidth="2"
+                stroke="url(#gradient1)"
+                strokeWidth="1.5"
                 fill="none"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
@@ -175,34 +175,55 @@ export default function Hero() {
               />
               <motion.path
                 d="M50 30 L70 40 L70 60 L50 70 L30 60 L30 40 Z"
-                stroke="#FF9E2C"
-                strokeWidth="2"
+                stroke="url(#gradient2)"
+                strokeWidth="1.5"
                 fill="none"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1.5, delay: 1.5 }}
               />
+              <defs>
+                <linearGradient
+                  id="gradient1"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#0BCEBC" />
+                  <stop offset="100%" stopColor="#FF9E2C" />
+                </linearGradient>
+                <linearGradient
+                  id="gradient2"
+                  x1="100%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#FF9E2C" />
+                  <stop offset="100%" stopColor="#0BCEBC" />
+                </linearGradient>
+              </defs>
             </svg>
           </motion.div>
 
           <motion.h1
-            className="mb-8 overflow-hidden"
+            className="mb-8 overflow-hidden relative"
             variants={container}
             initial="hidden"
             animate="visible"
           >
-            {/* logo */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mr-3 text-5xl md:text-7xl font-heading font-bold text-white"
+              className="inline-block relative"
             >
               <motion.span
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="gradient-text"
+                className="text-5xl md:text-7xl font-artistic bg-clip-text text-transparent bg-gradient-to-br from-teal via-white to-amber"
               >
                 YG
               </motion.span>
@@ -210,67 +231,271 @@ export default function Hero() {
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-white font-light ml-1"
+                className="text-5xl md:text-7xl font-heading text-white/90 font-thin ml-4"
               >
                 Level
               </motion.span>
+
+              {/* Decorative underline */}
               <motion.div
-                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-teal to-amber"
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
+                className="absolute -bottom-4 left-0 w-full h-[2px] overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-              />
-            </motion.div>
-
-            {/* {titleWords.map((word, index) => (
-              <motion.span
-                key={index}
-                className="inline-block mr-3 text-5xl md:text-7xl font-heading font-bold text-white"
-                variants={child}
               >
-                {index === 0 ? (
-                  <span className="text-teal">{word}</span>
-                ) : index === titleWords.length - 1 ? (
-                  <span className="text-amber">{word}</span>
-                ) : (
-                  word
-                )}
-              </motion.span>
-            ))} */}
+                <motion.div
+                  className="w-full h-full bg-gradient-to-r from-transparent via-teal to-transparent"
+                  animate={{
+                    x: ["-100%", "100%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
+                />
+              </motion.div>
+
+              {/* Decorative elements */}
+              <motion.div
+                className="absolute -top-6 -left-8 text-3xl text-amber/40 font-artistic"
+                initial={{ opacity: 0, rotate: -20, scale: 0.8 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                ✧
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-6 -right-8 text-3xl text-teal/40 font-artistic"
+                initial={{ opacity: 0, rotate: 20, scale: 0.8 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                ✧
+              </motion.div>
+            </motion.div>
           </motion.h1>
 
-          <motion.h1 className="text-2xl  md:text-5xl font-heading text-white mb-8 font-bold">
-            {translations[language].slogan}
-          </motion.h1>
+          <motion.h2
+            className="text-2xl md:text-3xl font-artistic text-white mb-10 font-normal tracking-[0.2em]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal via-white to-amber drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+              {translations[language].slogan}
+            </span>
+          </motion.h2>
 
           <motion.div
-            className="w-32 h-[2px] bg-gradient-to-r from-teal to-amber mx-auto my-8"
-            initial={{ width: 0 }}
-            animate={{ width: 128 }}
-            transition={{ duration: 1, delay: 2 }}
-          />
-
-          <motion.div
-            className="overflow-hidden mb-6"
+            className="w-40 h-[1px] mx-auto my-12 relative overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2.2 }}
+            transition={{ duration: 1, delay: 1.6 }}
           >
-            <motion.p
-              className="text-lg md:text-xl font-light tracking-widest text-white/90"
-              initial={{ y: 40 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8 }}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-teal/60 to-transparent"
+              animate={{
+                x: ["-100%", "100%"],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              }}
+            />
+            <motion.div
+              className="absolute -top-5 left-1/2 -translate-x-1/2 text-2xl text-amber/70 font-artistic drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"
+              initial={{ opacity: 0, y: 10, rotate: -20 }}
+              animate={{
+                opacity: [0.7, 1, 0.7],
+                y: [0, -5, 0],
+                rotate: [-20, 0, -20],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
             >
-              {translations[language].subtitle}
-            </motion.p>
+              ❋
+            </motion.div>
+            <motion.div
+              className="absolute -bottom-5 left-1/4 text-xl text-teal/70 font-artistic drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: [0.7, 1, 0.7],
+                scale: [0.8, 1, 0.8],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              ✧
+            </motion.div>
+            <motion.div
+              className="absolute -bottom-5 right-1/4 text-xl text-amber/70 font-artistic drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: [0.7, 1, 0.7],
+                scale: [0.8, 1, 0.8],
+              }}
+              transition={{
+                duration: 2.5,
+                delay: 0.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              ✧
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="overflow-hidden mb-10 relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+          >
+            <motion.div
+              className="relative flex justify-center max-w-4xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            >
+              <motion.div className="flex items-baseline space-x-6 md:space-x-8">
+                <motion.span
+                  className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2 }}
+                  whileHover={{
+                    color: "#5EEAE0",
+                    y: -3,
+                    transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+                  }}
+                >
+                  <span className="relative z-10">Йога</span>
+                  <motion.div
+                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                  />
+                </motion.span>
+
+                <motion.span
+                  className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.1 }}
+                  whileHover={{
+                    color: "#5EEAE0",
+                    y: -3,
+                    transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+                  }}
+                >
+                  <span className="relative z-10">Пилатес</span>
+                  <motion.div
+                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                  />
+                </motion.span>
+
+                <motion.div className="flex items-baseline space-x-3">
+                  <motion.span
+                    className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 2.2 }}
+                    whileHover={{
+                      color: "#5EEAE0",
+                      y: -3,
+                      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+                    }}
+                  >
+                    <span className="relative z-10">Танцевально</span>
+                    <motion.div
+                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                    />
+                  </motion.span>
+                  <motion.span
+                    className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 2.3 }}
+                    whileHover={{
+                      color: "#5EEAE0",
+                      y: -3,
+                      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+                    }}
+                  >
+                    <span className="relative z-10">двигательная</span>
+                    <motion.div
+                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                    />
+                  </motion.span>
+                  <motion.span
+                    className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 2.4 }}
+                    whileHover={{
+                      color: "#5EEAE0",
+                      y: -3,
+                      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+                    }}
+                  >
+                    <span className="relative z-10">терапия</span>
+                    <motion.div
+                      className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                    />
+                  </motion.span>
+                </motion.div>
+
+                <motion.span
+                  className="text-base md:text-lg font-body text-white/80 tracking-[0.1em] transform-gpu font-light uppercase relative group/item cursor-pointer"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.5 }}
+                  whileHover={{
+                    color: "#5EEAE0",
+                    y: -3,
+                    transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+                  }}
+                >
+                  <span className="relative z-10">Тетахилинг</span>
+                  <motion.div
+                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-teal/50 to-amber/50"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                  />
+                </motion.span>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
           <motion.p
-            className="text-base md:text-xl mb-10 text-white/80 font-light tracking-wide max-w-2xl mx-auto"
+            className="text-base md:text-lg mb-14 text-white/80 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.5 }}
+            transition={{ duration: 0.8, delay: 2.2 }}
           >
             {translations[language].description}
           </motion.p>
@@ -278,30 +503,58 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.8, delay: 2.4 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="relative"
           >
             <Button
               size="lg"
-              className=" text-white border-2 rounded-lg border-teal hover:border-amber px-10 py-7 relative overflow-hidden group bg-[#0BCEBC]"
+              className="text-white border-[0.5px] rounded-full border-teal/50 hover:border-amber/50 px-12 py-5 relative overflow-hidden group bg-gradient-to-r from-teal/30 to-amber/30 backdrop-blur-sm"
               onClick={() =>
                 document
                   .getElementById("about")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              <span className="relative z-10 tracking-widest font-light text-lg">
+              <span className="relative z-10 tracking-[0.2em] font-artistic text-lg group-hover:text-white">
                 {translations[language].cta}
               </span>
-              <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-teal to-amber"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3 }}
-                style={{ originX: 0 }}
-              />
+              <motion.div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={false}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-teal/40 to-amber/40"
+                  animate={{
+                    x: ["-100%", "100%"],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
+                />
+              </motion.div>
             </Button>
+            <motion.div
+              className="absolute -right-8 top-1/2 -translate-y-1/2 text-2xl text-teal/50 font-artistic"
+              initial={{ opacity: 0, x: -10, rotate: -20 }}
+              animate={{
+                opacity: [0.5, 1, 0.5],
+                x: 0,
+                rotate: [-20, 0, -20],
+              }}
+              transition={{
+                duration: 2,
+                delay: 2.6,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              ✧
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
