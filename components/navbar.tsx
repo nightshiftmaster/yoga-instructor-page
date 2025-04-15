@@ -200,7 +200,7 @@ export default function Navbar() {
                     setLanguage(language === "ru" ? "en" : "ru");
                     closeMenu();
                   }}
-                  className="text-white hover:text-teal border-teal/30 hover:border-teal w-fit font-light tracking-widest"
+                  className="text-white rounded-full bg-stone-700 hover:text-teal border-teal/30 hover:border-teal w-fit font-light tracking-widest"
                 >
                   {language === "ru" ? "EN" : "RU"}
                 </Button>
