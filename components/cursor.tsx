@@ -1,46 +1,46 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Cursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [cursorVariant, setCursorVariant] = useState("default")
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
         y: e.clientY,
-      })
-    }
+      });
+    };
 
-    const mouseDown = () => setCursorVariant("click")
-    const mouseUp = () => setCursorVariant("default")
-    const mouseEnterLink = () => setCursorVariant("hover")
-    const mouseLeaveLink = () => setCursorVariant("default")
+    const mouseDown = () => setCursorVariant("click");
+    const mouseUp = () => setCursorVariant("default");
+    const mouseEnterLink = () => setCursorVariant("hover");
+    const mouseLeaveLink = () => setCursorVariant("default");
 
-    window.addEventListener("mousemove", mouseMove)
-    window.addEventListener("mousedown", mouseDown)
-    window.addEventListener("mouseup", mouseUp)
+    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("mousedown", mouseDown);
+    window.addEventListener("mouseup", mouseUp);
 
-    const links = document.querySelectorAll("a, button")
+    const links = document.querySelectorAll("a, button");
     links.forEach((link) => {
-      link.addEventListener("mouseenter", mouseEnterLink)
-      link.addEventListener("mouseleave", mouseLeaveLink)
-    })
+      link.addEventListener("mouseenter", mouseEnterLink);
+      link.addEventListener("mouseleave", mouseLeaveLink);
+    });
 
     return () => {
-      window.removeEventListener("mousemove", mouseMove)
-      window.removeEventListener("mousedown", mouseDown)
-      window.removeEventListener("mouseup", mouseUp)
+      window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("mousedown", mouseDown);
+      window.removeEventListener("mouseup", mouseUp);
 
       links.forEach((link) => {
-        link.removeEventListener("mouseenter", mouseEnterLink)
-        link.removeEventListener("mouseleave", mouseLeaveLink)
-      })
-    }
-  }, [])
+        link.removeEventListener("mouseenter", mouseEnterLink);
+        link.removeEventListener("mouseleave", mouseLeaveLink);
+      });
+    };
+  }, []);
 
   const variants = {
     default: {
@@ -67,7 +67,7 @@ export default function Cursor() {
       backgroundColor: "rgba(255, 255, 255, 0.5)",
       mixBlendMode: "difference" as const,
     },
-  }
+  };
 
   return (
     <motion.div
@@ -76,6 +76,5 @@ export default function Cursor() {
       animate={cursorVariant}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
     />
-  )
+  );
 }
-

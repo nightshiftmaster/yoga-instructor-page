@@ -36,10 +36,13 @@ const stripePromise = loadStripeFromLibrary(
 const pictures = ["./yoga.jpg", "./back3.jpg", "./soul.jpg"];
 
 function PaymentSuccessHandler({ course }: { course: { title: string } }) {
-  const params = new URLSearchParams(window.location.search);
-  const redirectStatus = params.get("redirect_status");
+  // Don't read URL parameters here
 
   useEffect(() => {
+    // Read URL parameters only on the client inside useEffect
+    const params = new URLSearchParams(window.location.search);
+    const redirectStatus = params.get("redirect_status");
+
     if (redirectStatus === "succeeded") {
       toast.success("Оплата прошла успешно!", {
         description: `Вы успешно оплатили курс "${course.title}"`,
@@ -51,7 +54,8 @@ function PaymentSuccessHandler({ course }: { course: { title: string } }) {
       // Clear URL parameters after showing toast
       window.history.replaceState({}, document.title, window.location.pathname);
     }
-  }, [redirectStatus, course.title]);
+    // Dependency only on course.title, as URL is read on each effect execution
+  }, [course.title]);
 
   return null;
 }

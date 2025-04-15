@@ -43,7 +43,7 @@ export default function Footer() {
               Tel: +1 613 7699591
             </p>
             <p className="mt-3 text-sm text-white/60 max-w-xs tracking-wider font-light">
-              Email: yglevel@gmail.com
+              Email: YYglevel@gmail.com
             </p>
           </motion.div>
 

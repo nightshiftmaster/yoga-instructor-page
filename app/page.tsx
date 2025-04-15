@@ -14,7 +14,7 @@ export default function Home() {
     <LanguageProvider>
       <div className="min-h-screen bg-dark-black overflow-hidden">
         <Cursor />
-        <NavbarClient />
+        {/* <NavbarClient /> */}
         <main>
           <Hero />
           <About />
