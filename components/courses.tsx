@@ -70,12 +70,14 @@ export default function Courses() {
       id: 1,
       title: translations[language].course1Title,
       description: translations[language].course1Desc,
+      fullDescription: translations[language].course1FullDesc,
       details: translations[language].course1Details,
       price: translations[language].course1Price,
     },
     {
       id: 2,
       title: translations[language].course2Title,
+      fullDescription: translations[language].course2FullDesc,
       description: translations[language].course2Desc,
       details: translations[language].course2Details,
       price: translations[language].course2Price,
@@ -84,6 +86,7 @@ export default function Courses() {
       id: 3,
       title: translations[language].course3Title,
       description: translations[language].course3Desc,
+      fullDescription: translations[language].course3FullDesc,
       details: translations[language].course3Details,
       price: translations[language].course3Price,
     },
@@ -197,6 +200,7 @@ export default function Courses() {
     course: {
       id: number;
       title: string;
+      fullDescription: string;
       description: string;
       details: string;
       price: string;
@@ -344,17 +348,13 @@ export default function Courses() {
                       </span>
                     </div>
                     <p className="text-white/90 font-normal leading-relaxed">
-                      Курс включает в себя индивидуальный подход к каждому
-                      ученику, подробные инструкции и поддержку на всем пути
-                      обучения. Вы получите не только практические навыки, но и
-                      теоретические знания, которые помогут вам глубже понять
-                      практику.
+                      {course.fullDescription}
                     </p>
-                    <p className="text-white/90 font-normal leading-relaxed">
+                    {/* <p className="text-white/90 font-normal leading-relaxed">
                       Занятия проходят в комфортной атмосфере, способствующей
                       расслаблению и концентрации. Группы небольшие, что
                       позволяет уделить внимание каждому ученику.
-                    </p>
+                    </p> */}
                     <Button
                       className="airy-button text-white w-full lg:w-1/2  bg-teal/70 relative rounded-full overflow-hidden  tracking-wider font-medium"
                       onClick={handleEnrollClick}

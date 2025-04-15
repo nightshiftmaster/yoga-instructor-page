@@ -180,6 +180,17 @@ export default function About() {
                 {translations[language].aboutText3}
               </motion.p>
 
+              <motion.p
+                className="text-lg leading-relaxed mb-8 font-light text-white/80"
+                initial={{ opacity: 0, x: 200 }}
+                animate={
+                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
+                }
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {translations[language].aboutText4}
+              </motion.p>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={

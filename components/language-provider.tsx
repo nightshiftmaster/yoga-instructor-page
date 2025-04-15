@@ -36,27 +36,37 @@ const translations: Translations = {
     // About
     aboutTitle: "Обо мне",
     aboutText:
-      "Меня зовут Юлия Головин, я сертифицированный инструктор Йоги/Пилатес терапии...",
+      "Меня зовут Юлия Головин, я сертифицированный инструктор Йоги/Пилатес терапии",
     aboutText2:
-      "Мой путь в йоге начался более 10 лет назад. За это время я изучила различные направления и техники, которые помогают людям обрести гармонию тела и духа.",
+      "За плечами более 15 лет преподавательской практики. Большую часть жизни я провела в танцах и путешествиях по миру. Движение, энергия, ритм — через них я открывала новые грани тела и ощущений. Когда я открыла для себя йогу, мое сознание изменилось, все слилось в единое целое (танец,знание,йога).",
     aboutText3:
-      "В своей практике я сочетаю элементы йоги, пилатеса и танцевально-двигательной терапии, создавая уникальный подход к каждому ученику.",
+      "Философия йоги, влияние физической нагрузки на тело, любовь и открытость миру привели меня к истинному Я и необходимости создания YG_level пространства. ",
+    aboutText4:
+      "YG Level — это не просто йога практики. Это путь к сознательному проживанию жизни, искусство слышать себя и чувствовать мир.",
 
     // Courses
     coursesTitle: "Мои курсы",
     course1Title: "Знакомство с Йогой",
     course1Desc:
-      "Первые шаги в мир осознанности: дыхание, движения, концентрация.",
+      "Первые шаги в мир осознанности. Этот курс поможет тебе мягко войти в практику, понять основы дыхания, движения и концентрации",
+    course1FullDesc:
+      "Ты узнаешь, как правильно выполнять асаны, работать с дыханием и расслабляться, чтобы почувствовать гармонию тела и ума. Подходит для новичков, а также для тех, кто хочет вернуться к практике с осознанностью.",
     course1Details: "1 месяц (16 занятий)",
     course1Price: "650",
 
     course2Title: "Здоровая спина",
-    course2Desc: "Практика для укрепления позвоночника и улучшения осанки.",
+    course2Desc:
+      "Спина — ось нашего тела и зеркало образа жизни. Этот курс направлен на восстановление и укрепление позвоночника, снятие напряжения и улучшение осанки",
+    course2FullDesc:
+      "Включает в себя мягкие, но эффективные упражнения из йоги, пилатеса и дыхательных практик. Подходит для тех, кто испытывает дискомфорт в спине, хочет улучшить осанку и почувствовать лёгкость в движении.",
     course2Details: "2 месяца (24 занятия)",
     course2Price: "1200",
 
     course3Title: "Красота тела и души",
-    course3Desc: "Йога, танец и осознанность для женственности и гармонии.",
+    course3Desc:
+      "Истинная красота — это внутренняя гармония. Kурс объединяет йогу, танцевально-двигательную терапию и практики осознанности.",
+    course3FullDesc:
+      "Ты научишься чувствовать своё тело, работать с энергией и раскрывать свою естественную красоту через движение. Подходит для тех, кто хочет соединить физическую практику с глубокой внутренней работой.",
     course3Details: "3 месяца (60 занятий)",
     course3Price: "1550",
 
@@ -98,27 +108,37 @@ const translations: Translations = {
     // About
     aboutTitle: "About Me",
     aboutText:
-      "My name is Yulia Golovin, I am a certified Yoga/Pilates therapy instructor...",
+      "My name is Yuliya Golovin, I am a certified Yoga/Pilates therapy instructor.",
     aboutText2:
-      "My journey in yoga began over 10 years ago. During this time, I've studied various directions and techniques that help people achieve harmony of body and spirit.",
-    aboutText3:
-      "In my practice, I combine elements of yoga, pilates, and dance movement therapy, creating a unique approach for each student.",
+      "I have over 15 years of teaching experience. I have spent most of my life dancing and traveling the world. Movement, energy, rhythm — through them I discovered new facets of the body and sensations. When I discovered yoga, my consciousness changed, everything merged into a single whole (dance, knowledge, yoga).",
 
+    aboutText3:
+      "The philosophy of yoga, the impact of physical activity on the body, love and openness to the world led me to my true self and the need to create the YG_level space.",
+    aboutText4:
+      "YG Level is not just yoga practices. It is a path to conscious living, the art of hearing yourself and feeling the world.",
     // Courses
     coursesTitle: "My Courses",
     course1Title: "Introduction to Yoga",
     course1Desc:
-      "First steps into the world of mindfulness: breathing, movements, concentration.",
+      "First steps into the world of mindfulness. This course will gently introduce you to the practice, helping you understand the basics of breathing, movement, and concentration.",
+    course1FullDesc:
+      "You will learn how to correctly perform asanas, work with your breath, and relax to feel the harmony of body and mind. Suitable for beginners as well as those who want to return to practice with mindfulness.",
     course1Details: "1 month (16 sessions)",
     course1Price: "650",
 
     course2Title: "Healthy Back",
-    course2Desc: "Practice for strengthening the spine and improving posture.",
+    course2Desc:
+      "The back is the axis of our body and a mirror of our lifestyle. This course is aimed at restoring and strengthening the spine, relieving tension, and improving posture.",
+    course2FullDesc:
+      "Includes gentle yet effective exercises from yoga, pilates, and breathing practices. Suitable for those who experience back discomfort, want to improve posture, and feel lightness in movement.",
     course2Details: "2 months (24 sessions)",
     course2Price: "1200",
 
     course3Title: "Beauty of Body and Soul",
-    course3Desc: "Yoga, dance, and mindfulness for femininity and harmony.",
+    course3Desc:
+      "True beauty is inner harmony. This course combines yoga, dance-movement therapy, and mindfulness practices.",
+    course3FullDesc:
+      "You will learn to feel your body, work with energy, and reveal your natural beauty through movement. Suitable for those who want to combine physical practice with deep inner work.",
     course3Details: "3 months (60 sessions)",
     course3Price: "1550",
 
