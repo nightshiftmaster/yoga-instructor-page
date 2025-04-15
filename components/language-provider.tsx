@@ -27,11 +27,11 @@ const translations: Translations = {
     // Hero
     title: "YG Level",
     slogan: "В мире осознанности",
-    subtitle: "Йога • Пилатес • Танцевально-двигательная терапия • Тетахилинг",
+    subtitle: "Йога • Пилатес • Танцевально-двигательная терапия • Тета-хилинг",
     description: "Все о движении тела и ума.",
     cta: "Узнать больше",
     serviceList:
-      "Йога • Пилатес • Танцевально-двигательная терапия • Тетахилинг",
+      "Йога • Пилатес • Танцевально-двигательная терапия • Тета-хилинг",
 
     // About
     aboutTitle: "Обо мне",
@@ -90,10 +90,10 @@ const translations: Translations = {
     // Hero
     title: "YG Level",
     slogan: "In the World of Mindfulness",
-    subtitle: "Yoga • Pilates • Dance Movement Therapy • ThetaHealing",
+    subtitle: "Yoga • Pilates • Dance Movement Therapy • Theta-Healing",
     description: "All about the movement of body and mind.",
     cta: "Learn More",
-    serviceList: "Yoga • Pilates • Dance Movement Therapy • ThetaHealing",
+    serviceList: "Yoga • Pilates • Dance Movement Therapy • Theta-Healing",
 
     // About
     aboutTitle: "About Me",
