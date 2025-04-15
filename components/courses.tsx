@@ -355,6 +355,12 @@ export default function Courses() {
                       расслаблению и концентрации. Группы небольшие, что
                       позволяет уделить внимание каждому ученику.
                     </p>
+                    <Button
+                      className="airy-button text-white w-full lg:w-1/2  bg-teal/70 relative rounded-full overflow-hidden  tracking-wider font-medium"
+                      onClick={handleEnrollClick}
+                    >
+                      {translations[language].enroll}
+                    </Button>
                   </div>
                   <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
                     <X className="h-4 w-4 text-white" />
