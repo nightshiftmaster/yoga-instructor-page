@@ -27,31 +27,12 @@ export const metadata = {
       "Yoga, Pilates, Dance Movement Therapy & ThetaHealing with Yulia Golovin",
     images: [
       {
-        url: "/OGphoto.png",
+        url: "/OG.png",
         width: 1200,
         height: 630,
         alt: "YG Level - Yoga & Pilates",
       },
     ],
-  },
-  alternates: {
-    languages: {
-      en: "/en",
-      ru: "/ru",
-    },
-  },
-  metadataBase: new URL("https://yglevel.com"),
-  robots: {
-    index: true,
-    follow: true,
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 

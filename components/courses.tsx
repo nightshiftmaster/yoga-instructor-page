@@ -722,7 +722,7 @@ function CheckoutForm({
                 <Field
                   id="phone"
                   name="phone"
-                  placeholder="+7 (999) 123-45-67"
+                  placeholder="+1 (123) 456-7890"
                   className={`w-full bg-white border ${
                     errors.phone && touched.phone
                       ? "border-red-500"
