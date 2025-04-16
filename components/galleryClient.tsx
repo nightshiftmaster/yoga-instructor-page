@@ -76,7 +76,7 @@ export default function Gallery({
               className="text-4xl md:text-6xl font-heading font-bold text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span className="text-teal">
                 {translations[language].gallery.charAt(0)}
@@ -88,7 +88,7 @@ export default function Gallery({
               className="w-24 h-[2px] mx-auto mt-8 mb-4"
               initial={{ width: 0 }}
               animate={isInView ? { width: 96 } : { width: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               style={{
                 background: "linear-gradient(90deg, #0BCEBC, #FF9E2C)",
               }}
@@ -98,7 +98,7 @@ export default function Gallery({
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Swiper
               modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}

@@ -1,8 +1,17 @@
 import type React from "react";
 import "@/app/globals.css";
-import { Quicksand, DM_Sans } from "next/font/google";
+import {
+  Quicksand,
+  DM_Sans,
+  Dancing_Script,
+  Playfair_Display,
+  Italiana,
+  Pinyon_Script,
+  Cormorant_Upright,
+} from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -14,6 +23,18 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-dmsans",
+});
+
+const pinyonScript = Pinyon_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pinyon",
+});
+
+const cormorantUpright = Cormorant_Upright({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-cormorant",
 });
 
 export const metadata = {
@@ -90,7 +111,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${quicksand.variable} ${dmSans.variable} font-sans antialiased`}
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          dmSans.variable,
+          quicksand.variable,
+          pinyonScript.variable,
+          cormorantUpright.variable
+        )}
       >
         <ThemeProvider
           attribute="class"
@@ -114,5 +141,4 @@ export default function RootLayout({
     </html>
   );
 }
-
 import "./globals.css";

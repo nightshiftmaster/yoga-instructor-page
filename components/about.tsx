@@ -152,10 +152,10 @@ export default function About() {
                 }
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <span className="text-teal text-3xl font-heading font-medium">
-                  "
+                <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.2">
+                  {translations[language].aboutText.charAt(0)}
                 </span>
-                {translations[language].aboutText}
+                {translations[language].aboutText.slice(1)}
               </motion.p>
 
               <motion.p
@@ -188,7 +188,10 @@ export default function About() {
                 }
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                {translations[language].aboutText4}
+                <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">
+                  {translations[language].aboutText4.charAt(0)}
+                </span>
+                {translations[language].aboutText4.slice(1)}
               </motion.p>
 
               <motion.div
