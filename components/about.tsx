@@ -93,7 +93,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 2, delay: 0.8 }}
               className="relative perspective-container"
             >
               <motion.div
@@ -142,7 +142,7 @@ export default function About() {
               initial={{ opacity: 0, x: 100 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
               transition={{ duration: 2, delay: 0.8 }}
-              className="text-white "
+              className="text-white mt-6 "
             >
               <p className="text-lg leading-relaxed mb-8  font-light text-white/80">
                 <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">

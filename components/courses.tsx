@@ -162,7 +162,7 @@ export default function Courses() {
             </motion.h2>
 
             <motion.div
-              className="w-24 h-[1px] mx-auto mt-8 mb-4"
+              className="w-24 h-[2px] mx-auto mt-8 mb-4"
               initial={{ width: 0, opacity: 0 }}
               animate={
                 isInView
@@ -176,7 +176,7 @@ export default function Courses() {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-14 -mt-8">
             {courses.map((course, index) => (
               <CourseCard
                 picture={pictures[index]}
