@@ -269,7 +269,7 @@ export default function Contact() {
                 }
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <p className="text-xl leading-relaxed font-light">
+                <p className="md:text-xl text-base leading-relaxed font-light">
                   {language === "ru"
                     ? "Если у вас есть вопросы о моих курсах или вы хотите записаться на занятие, пожалуйста, заполните форму или свяжитесь со мной через социальные сети."
                     : "If you have questions about my courses or would like to sign up for a class, please fill out the form or contact me through social media."}
@@ -289,9 +289,6 @@ export default function Contact() {
                 }
                 transition={{ duration: 0.5, delay: 1 }}
               >
-                {/* <h3 className="text-2xl font-heading font-bold mb-8 text-teal">
-                  {translations[language].follow}
-                </h3> */}
                 <div className="flex justify-center items-center  space-x-6">
                   <motion.a
                     href="tel:+16137699591"

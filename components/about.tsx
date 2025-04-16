@@ -142,17 +142,17 @@ export default function About() {
               initial={{ opacity: 0, x: 200 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-white text-center md:text-left"
+              className="text-white "
             >
               <motion.p
-                className="text-lg leading-relaxed mb-8 font-light text-white/80"
+                className="text-lg leading-relaxed mb-8  font-light text-white/80"
                 initial={{ opacity: 0, x: 200 }}
                 animate={
                   isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.2">
+                <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">
                   {translations[language].aboutText.charAt(0)}
                 </span>
                 {translations[language].aboutText.slice(1)}
