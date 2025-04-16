@@ -117,7 +117,7 @@ export default function About() {
                       ? { opacity: 1, scale: 1 }
                       : { opacity: 0, scale: 0 }
                   }
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                  transition={{ duration: 1, delay: 0.3 }}
                 >
                   <svg viewBox="0 0 100 100" className="w-full h-full">
                     <path
@@ -139,9 +139,9 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 200 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+              transition={{ duration: 3, delay: 0.2 }}
               className="text-white "
             >
               <motion.p
@@ -150,7 +150,7 @@ export default function About() {
                 animate={
                   isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
                 <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">
                   {translations[language].aboutText.charAt(0)}
@@ -164,7 +164,7 @@ export default function About() {
                 animate={
                   isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
                 {translations[language].aboutText2}
               </motion.p>
@@ -175,7 +175,7 @@ export default function About() {
                 animate={
                   isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
                 {translations[language].aboutText3}
               </motion.p>
@@ -186,7 +186,7 @@ export default function About() {
                 animate={
                   isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
                 }
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
                 <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">
                   {translations[language].aboutText4.charAt(0)}
@@ -202,7 +202,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-10"
+                className="mt-10 flex justify-center"
               >
                 <Button
                   size="lg"
