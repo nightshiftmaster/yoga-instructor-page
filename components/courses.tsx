@@ -63,7 +63,7 @@ function PaymentSuccessHandler({ course }: { course: { title: string } }) {
 export default function Courses() {
   const { language, translations } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   const courses = [
     {
@@ -101,14 +101,14 @@ export default function Courses() {
       {/* Decorative elements */}
       <motion.div
         className="absolute top-20 left-10 w-80 h-80 rounded-full bg-teal/3 blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
-          x: [0, 30, 0],
-          y: [0, -30, 0],
-        }}
+        // animate={{
+        //   scale: [1, 1.2, 1],
+        //   opacity: [0.1, 0.2, 0.1],
+        //   x: [0, 30, 0],
+        //   y: [0, -30, 0],
+        // }}
         transition={{
-          duration: 15,
+          duration: 3,
           repeat: Number.POSITIVE_INFINITY,
           repeatType: "reverse",
         }}
@@ -137,9 +137,9 @@ export default function Courses() {
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto"
         >
-          <div className="text-center mb-24">
+          <div className="text-center mb-24 flex flex-col">
             <motion.span
-              className="inline-block text-teal/90 text-sm tracking-[0.3em] uppercase mb-6 font-medium"
+              className="inline-block text-teal text-sm tracking-[0.3em] uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
@@ -148,25 +148,30 @@ export default function Courses() {
             </motion.span>
 
             <motion.h2
-              className="text-4xl md:text-6xl font-heading font-bold text-white"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl   md:text-6xl font-heading font-bold text-white relative inline-block"
+              initial={{ y: 80 }}
+              animate={isInView ? { y: 0 } : { y: 80 }}
+              transition={{ duration: 1, delay: 0 }}
             >
-              <span className="text-teal">
+              <motion.span className="text-teal inline-block">
                 {translations[language].coursesTitle.charAt(0)}
+              </motion.span>
+              <span className="inline-block">
+                {translations[language].coursesTitle.slice(1)}
               </span>
-              {translations[language].coursesTitle.slice(1)}
             </motion.h2>
 
             <motion.div
               className="w-24 h-[1px] mx-auto mt-8 mb-4"
-              initial={{ width: 0 }}
-              animate={isInView ? { width: 96 } : { width: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ width: 0, opacity: 0 }}
+              animate={
+                isInView
+                  ? { width: 100, opacity: 0.5 }
+                  : { width: 0, opacity: 0 }
+              }
+              transition={{ duration: 1, delay: 0.3 }}
               style={{
                 background: "linear-gradient(90deg, #0BCEBC, #FF9E2C)",
-                opacity: 0.5,
               }}
             />
           </div>
@@ -246,18 +251,18 @@ export default function Courses() {
       <>
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -50 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.3, delay: 0.2 + index * 0.2 }}
-          className="airy-card overflow-hidden relative group border-[0.1px] bg-stone-500 drop-shadow-2xl shadow-2xl  border-gray-400 rounded-2xl "
+          whileHover={{ y: -30 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
+          className="airy-card overflow-hidden max-h-[120vh] relative group border-[0.1px] bg-stone-500 drop-shadow-2xl shadow-2xl  border-gray-400 rounded-2xl "
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-b border-1 border-white  from-teal/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             animate={isHovered ? { opacity: 0 } : { opacity: 0 }}
           />
-          <div className="opacity-80 h-1/3 p-6 ">
+          <div className="opacity-80 h-[35vh] p-6 ">
             <img
               src={picture}
               alt=""

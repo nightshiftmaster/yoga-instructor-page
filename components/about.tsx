@@ -68,12 +68,12 @@ export default function About() {
 
             <div className="overflow-hidden">
               <motion.h2
-                className="text-4xl md:text-6xl font-heading font-bold text-white relative inline-block"
+                className="text-4xl   md:text-6xl font-heading font-bold text-white relative inline-block"
                 initial={{ y: 100 }}
                 animate={isInView ? { y: 0 } : { y: 100 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <span className="text-teal">{titleChars[0]}</span>
+                <span className="text-teal ">{titleChars[0]}</span>
                 {titleChars.slice(1).join("")}
                 <motion.span
                   className="absolute -bottom-2 left-0 w-full h-[3px]"
