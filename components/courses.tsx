@@ -63,7 +63,7 @@ function PaymentSuccessHandler({ course }: { course: { title: string } }) {
 export default function Courses() {
   const { language, translations } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0 });
 
   const courses = [
     {
@@ -132,17 +132,17 @@ export default function Courses() {
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto"
         >
-          <div className="text-center mb-24 flex flex-col">
+          <motion.div className="text-center mb-24 flex flex-col">
             <motion.span
               className="inline-block text-teal text-sm tracking-[0.3em] uppercase mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5 }}
+              // initial={{ opacity: 0, y: 20 }}
+              // animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              // transition={{ duration: 0.5 }}
             >
               {translations[language].coursesHeader}
             </motion.span>
@@ -174,7 +174,7 @@ export default function Courses() {
                 background: "linear-gradient(90deg, #0BCEBC, #FF9E2C)",
               }}
             />
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
             {courses.map((course, index) => (

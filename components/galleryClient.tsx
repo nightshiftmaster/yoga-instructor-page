@@ -30,7 +30,7 @@ export default function Gallery({
 }) {
   const { language, translations } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0 });
 
   const { scrollYProgress } = useScroll({
     target: ref,

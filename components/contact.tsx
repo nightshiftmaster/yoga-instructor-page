@@ -11,7 +11,7 @@ import { Instagram, Facebook, Youtube, PhoneCall, Send } from "lucide-react";
 export default function Contact() {
   const { language, translations } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0 });
   const [formState, setFormState] = useState({
     name: "",
     email: "",

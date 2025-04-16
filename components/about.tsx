@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 export default function About() {
   const { language, translations } = useLanguage();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0 });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -93,7 +93,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 1, delay: 0.8 }}
               className="relative perspective-container"
             >
               <motion.div
@@ -141,58 +141,30 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-              transition={{ duration: 3, delay: 0.2 }}
+              transition={{ duration: 2, delay: 0.8 }}
               className="text-white "
             >
-              <motion.p
-                className="text-lg leading-relaxed mb-8  font-light text-white/80"
-                initial={{ opacity: 0, x: 200 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
-                }
-                transition={{ duration: 1, delay: 0.2 }}
-              >
+              <p className="text-lg leading-relaxed mb-8  font-light text-white/80">
                 <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">
                   {translations[language].aboutText.charAt(0)}
                 </span>
                 {translations[language].aboutText.slice(1)}
-              </motion.p>
+              </p>
 
-              <motion.p
-                className="text-lg leading-relaxed mb-8 font-light text-white/80"
-                initial={{ opacity: 0, x: 200 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
-                }
-                transition={{ duration: 1, delay: 0.2 }}
-              >
+              <p className="text-lg leading-relaxed mb-8 font-light text-white/80">
                 {translations[language].aboutText2}
-              </motion.p>
+              </p>
 
-              <motion.p
-                className="text-lg leading-relaxed mb-8 font-light text-white/80"
-                initial={{ opacity: 0, x: 200 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
-                }
-                transition={{ duration: 1, delay: 0.2 }}
-              >
+              <p className="text-lg leading-relaxed mb-8 font-light text-white/80">
                 {translations[language].aboutText3}
-              </motion.p>
+              </p>
 
-              <motion.p
-                className="text-lg leading-relaxed mb-8 font-light text-white/80"
-                initial={{ opacity: 0, x: 200 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
-                }
-                transition={{ duration: 1, delay: 0.2 }}
-              >
+              <p className="text-lg leading-relaxed mb-8 font-light text-white/80">
                 <span className="float-left text-[5rem] mr-2 font-initial text-white leading-[0.6] -mt-1.5">
                   {translations[language].aboutText4.charAt(0)}
                 </span>
                 {translations[language].aboutText4.slice(1)}
-              </motion.p>
+              </p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
