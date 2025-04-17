@@ -8,10 +8,31 @@ import { useLanguage } from "@/components/language-provider";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
+const LanguageButton = () => {
+  const { language, setLanguage } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
+  const closeMenu = () => setIsOpen(false);
+  return (
+    <div>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => {
+          setLanguage(language === "ru" ? "en" : "ru");
+          closeMenu();
+        }}
+        className="text-white text-[0.7rem] ml-2 md:text-sm  p-3 md:p-3 rounded-full bg-stone-600 hover:text-teal border-teal/30 hover:border-teal w-fit font-light tracking-widest"
+      >
+        {language === "ru" ? "EN" : "RU"}
+      </Button>
+    </div>
+  );
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { language, setLanguage, translations } = useLanguage();
+  const { language, translations } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,42 +153,27 @@ export default function Navbar() {
           )}
         </motion.nav>
 
-        <motion.div
-          className="hidden md:flex items-center space-x-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setLanguage(language === "ru" ? "en" : "ru")}
-              className="text-white hover:text-teal bg-stone-600 rounded-full border-teal/30 hover:border-teal font-light tracking-widest"
-            >
-              {language === "ru" ? "EN" : "RU"}
-            </Button>
-          </motion.div>
-        </motion.div>
-
         {/* Mobile Navigation Toggle */}
-        <motion.button
-          className="md:hidden text-white"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </motion.button>
+        <div className="flex  items-center justify-center gap-1 -mr-7 md:mr-0">
+          <motion.button
+            className="md:hidden text-white  "
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            {isOpen ? <X size={26} /> : <Menu size={29} />}
+          </motion.button>
+          <LanguageButton />
+        </div>
       </div>
 
       {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-[#8f8882] via-[#8A7F7A] to-[#ddcac4] shadow-md py-6 px-6 transition-all duration-300 ease-in-out"
+            className="md:hidden absolute top-full left-0  right-0 bg-gradient-to-b from-[#8f8882] via-[#8A7F7A] to-[#ddcac4] shadow-md py-6 px-6 transition-all duration-300 ease-in-out"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -188,23 +194,6 @@ export default function Navbar() {
                   </motion.button>
                 )
               )}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    setLanguage(language === "ru" ? "en" : "ru");
-                    closeMenu();
-                  }}
-                  className="text-white rounded-full bg-stone-700 hover:text-teal border-teal/30 hover:border-teal w-fit font-light tracking-widest"
-                >
-                  {language === "ru" ? "EN" : "RU"}
-                </Button>
-              </motion.div>
             </nav>
           </motion.div>
         )}
