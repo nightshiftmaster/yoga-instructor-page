@@ -5,7 +5,6 @@ import { motion, useInView } from "framer-motion";
 import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { X, Check, CreditCard, Mail, Phone, User } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import {
@@ -239,11 +238,7 @@ export default function Courses() {
         setIsPaymentOpen(true);
       } catch (error) {
         console.error("Error creating payment intent:", error);
-        // toast({
-        //   title: "Error",
-        //   description: "Could not initialize payment. Please try again later.",
-        //   variant: "destructive",
-        // });
+        toast("Could not initialize payment. Please try again later.");
       }
     };
 
@@ -355,11 +350,7 @@ export default function Courses() {
                     <p className="text-white/90 font-normal leading-relaxed">
                       {course.fullDescription}
                     </p>
-                    {/* <p className="text-white/90 font-normal leading-relaxed">
-                      Занятия проходят в комфортной атмосфере, способствующей
-                      расслаблению и концентрации. Группы небольшие, что
-                      позволяет уделить внимание каждому ученику.
-                    </p> */}
+
                     <Button
                       className="airy-button text-white w-full lg:w-1/2  bg-teal/70 relative rounded-full overflow-hidden  tracking-wider font-medium"
                       onClick={handleEnrollClick}
@@ -419,17 +410,8 @@ export default function Courses() {
               </div>
             ) : (
               <div className="space-y-6 py-2">
-                {/* <div className="flex items-center gap-2 bg-teal/10 p-4 rounded-md">
-                  <CreditCard className="h-5 w-5 text-teal" />
-                  <p className="text-sm">
-                    Secure payment processed by Stripe. Your information is
-                    protected.
-                  </p>
-                </div> */}
-
                 <div className="space-y-4">
                   <div className="pt-4 border-t border-white/5 text-slate-700 -mt-5 ">
-                    {/* <h4 className="text-lg font-medium mb-4">Course Details</h4> */}
                     <div className="flex justify-between mb-2">
                       <span className="font-medium">Course:</span>
                       <span className="font-bold">{course.title}</span>
@@ -443,9 +425,6 @@ export default function Courses() {
                   </div>
 
                   <div className="pt-4 border-t border-white/5">
-                    {/* <h4 className="text-xl font-bold text-slate-700 mb-4">
-                      Payment Details
-                    </h4> */}
                     {clientSecret ? (
                       <Elements
                         stripe={stripePromise}
