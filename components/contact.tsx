@@ -1,12 +1,10 @@
 "use client";
-
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/components/language-provider";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Instagram, Facebook, Youtube, PhoneCall, Send } from "lucide-react";
+import { Instagram, Facebook, PhoneCall, Send } from "lucide-react";
 import { Formik, Form, Field, FormikHelpers } from "formik";
 import * as Yup from "yup";
 
@@ -71,22 +69,6 @@ export default function Contact() {
     } finally {
       setSubmitting(false);
     }
-  };
-
-  const formVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
   };
 
   return (
